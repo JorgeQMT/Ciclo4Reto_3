@@ -1,17 +1,27 @@
 /**
- * Este evento de JQuery se ejecuta cuando se termina de cargar la libreria
+ * Establece el aspecto inicial de la interfaz
  */
- $(document).ready(function () {
-    estadoInicial();
-  
-      //si hizo clic en el enlace de cerrar sesion
-    $("#cerrarSession").click(function (){
-          sessionStorage.removeItem("user");
-          location.href="index.html"
-    });
-  
-});
+function estadoInicial(){
+    let user = sessionStorage.getItem("user");
 
+    if (user== null)
+        location.href="index.html";
+    else{
+        let userJS = JSON.parse(user);
+        let typeUser;
+
+        if (userJS.type=='ASE')
+            typeUser="ASESOR";
+        else if (userJS.type=='ADM')
+            typeUser="ADMINISTRADOR";
+        else if (userJS.type=='COORD')
+            typeUser="COORDINADOR";
+
+        $("#nameUser").html(userJS.name);
+        $("#emailUser").html(userJS.email);
+        $("#typeUser").html(typeUser);
+    }   
+}
 
 
 /**
@@ -40,7 +50,6 @@ $(document).ready(function (){
     let myTableU="<table>";
     for(i=0;i<respuestaU.length;i++){
         myTableU+="<tr>";
-        myTableU+="<td>"+respuestaU[i].id+"</td>";
         myTableU+="<td>"+respuestaU[i].identification+"</td>";
         myTableU+="<td>"+respuestaU[i].name+"</td>";
         myTableU+="<td>"+respuestaU[i].address+"</td>";
@@ -60,9 +69,10 @@ $(document).ready(function (){
  * Crear un usuario en la aplicaciòn
  */
 function saveUser(){
-    let idUser = document.getElementById("userId").value;
     let identification = document.getElementById("userIdentification").value;
     let name = document.getElementById("userName").value;
+    let birthtDay = document.getElementById("userBirthtDay").value;
+    let monthBirthtDay = document.getElementById("userMonthBirthtDay").value;
     let address = document.getElementById("userAddress").value;
     let cellphone = document.getElementById("UserCellphone").value;
     let email = document.getElementById("userEmail").value;
@@ -71,7 +81,7 @@ function saveUser(){
     let zone = document.getElementById("userZone").value;
     let type = document.getElementById("userType").value;
     
-    if (idUser!= "" && identification!= "" && name!= "" && address!= "" && cellphone!= ""  && email != "" && password != "" && passwordC != "" && zone != "" && type!= "") {
+    if (identification!= "" && name!= "" && birthtDay!= "" && monthBirthtDay!= "" && address!= "" && cellphone!= ""  && email != "" && password != "" && passwordC != "" && zone != "" && type!= "") {
         $.ajax({
             type:'GET',
             contentType: "application/json",
@@ -85,9 +95,10 @@ function saveUser(){
                             contentType: "application/json; charset=utf-8",
                             dataType: 'JSON',
                             data: JSON.stringify({
-                                "id": idUser,
                                 "identification": identification,
                                 "name": name,
+                                "birthtDay": birthtDay,
+                                "monthBirthtDay": monthBirthtDay,
                                 "address": address,
                                 "cellPhone": cellphone,
                                 "email":email,
@@ -103,6 +114,8 @@ function saveUser(){
                                 window.location.reload();
                                 $("#userIdentification").val("");
                                 $("#userName").val("");
+                                $("#userBirthtDay").val("");
+                                $("#userMonthBirthtDay").val("");
                                 $("#userAddress").val("");
                                 $("#UserCellphone").val("");
                                 $("#userEmail").val("");
@@ -139,9 +152,10 @@ function saveUser(){
  */
 function updateUser(){
     let myDataE={
-        id:$("#userIdE").val(),
         identification:$("#userIdentificationE").val(),
         name:$("#userNameE").val(),
+        birthtDay:$("#userBirthtDayE").val(),
+        monthBirthtDay:$("#userMonthBirthtDayE").val(),
         address:$("#userAddressE").val(),
         cellPhone:$("#UserCellphoneE").val(),
         email:$("#userEmailE").val(),
@@ -163,6 +177,8 @@ function updateUser(){
             window.location.reload();
             $("#userIdentificationE").val("");
             $("#userNameE").val("");
+            $("#userBirthtDayE").val(),
+            $("#userMonthBirthtDayE").val(),
             $("#userAddressE").val("");
             $("#UserCellphoneE").val("");
             $("#userEmailE").val("");
@@ -198,10 +214,10 @@ function updateUser(){
             $("#resultadoUsers").empty();
             traerInformacionUsers();
         Swal.fire({
-            title: "Prducto: "+ idUser,
+            title: "Usuario: "+ idUser,
             text: "¿Eliminar?",
             icon: 'warning',
-            confirmButtonText: "Sí, eliminar",
+            confirmButtonText: "Sí, Eliminar",
         })
         .then(resultado => {
             if (resultado.value) {
@@ -214,6 +230,18 @@ function updateUser(){
         });
         }
     });
-
 }
 // fin Borrar User
+
+//cuando carga la página html se ejecuta la función: listar()
+$(document).ready(function () {
+    //configura el aspecto inicial de la pagina
+    estadoInicial();
+    //ejecuta función para enviar petición al ws
+
+    //si hizo clic en el enlace de cerrar sesion
+    $("#cerrarSession").click(function (){
+        sessionStorage.removeItem("user");
+        location.href="index.html"
+    });
+});

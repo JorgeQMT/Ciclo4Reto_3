@@ -38,7 +38,7 @@
             <button class="close">&times;</button>
         </div>
         <div class="container">
-            <a href="menu.html"><img src="img/back.png" alt="Regresar" /></a>
+            <a href="menu.html">Regresar</a>
             <div class="row mt-2">
                 <div class="col-md-12">
                     <table class="table table-bordered border-primary">
@@ -49,31 +49,31 @@
                             <th>Tipo</th>
                             <th>Terminar</th>
                         </tr>
-                        </tr>
                         <tr>
-                            <td><a href="menu.html"><img src="img/back.png" alt="Inicio"></a></td>
+                            <td><a href="menu.html">Inicio</a></td>
                             <td id="nameUser"></td>
                             <td id="emailUser"></td>
                             <td id="typeUser"></td>
                             <td><a id="cerrarSession" href="#">Cerrar Sessión</a></td>
                         </tr>
-                        </tr>
                     </table>
                 </div>        
             </div>
             <div id="login" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-12">
-                <img class="img-fluid mx-auto d-block rounded"src="img/logo2.png"/>
+                <img class="img-fluid mx-auto d-block rounded" src="img/logo2.png"/>
             </div>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Confirmar Orden</button>
             <div class="card-body">
-                <div class="table-responsive">
-                    <table id="listado" class="table table-bordered table-hover table-striped"></table>
-                </div>
                 <h3>Orden de Pedido</h3>
                 <div class="table-responsive">
                     <table id="pedido" class="table table-bordered table-hover table-striped"></table>
                 </div>
-            </div>         
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Confirmar Orden</button>
+                <div class="table-responsive">
+                    <table id="listado" class="table table-bordered table-hover table-striped"></table>
+                </div>
+            </div>
+            
+            <br>
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -185,7 +185,6 @@
               </div>
             </div>
             </div>
-        </div>
         </div>
     </main>     
     <!-- fin Inicio de sesion--> 

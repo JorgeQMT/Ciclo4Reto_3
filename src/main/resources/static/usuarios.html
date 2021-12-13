@@ -31,13 +31,10 @@
         </div>
     </nav>
     <!-- fin Barra Navegacion--> 
-    <!-- Inicio de sesion-->   
-    
-    <!-- fin Inicio de sesion--> 
-    
+    <!-- Inicio de sesion-->
     <main role="main" class="container my-auto" style="background-color: #ffff; border: 0ch;">
-        <a href="menu.html"><img src="img/back.png" alt="Regresar" /></a>   
         <div class="container">
+            <a href="menu.html">Regresar</a>
             <div class="row mt-2">
                 <div class="col-md-12">
                     <table class="table table-bordered border-primary">
@@ -48,34 +45,26 @@
                             <th>Tipo</th>
                             <th>Terminar</th>
                         </tr>
-                        </tr>
                         <tr>
-                            <td><a href="menu.html"><img src="img/back.png" alt="Inicio"></a></td>
+                            <td><a href="menu.html">Inicio</a></td>
                             <td id="nameUser"></td>
                             <td id="emailUser"></td>
                             <td id="typeUser"></td>
                             <td><a id="cerrarSession" href="#">Cerrar Sessión</a></td>
                         </tr>
-                        </tr>
                     </table>
                 </div>        
             </div>
-          <div id="login" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-12">
-            <h2 class="text-center">Bienvenid@</h2>
-              <img class="img-fluid mx-auto d-block rounded"src="img/logo2.png"/>
-              <div class="contact-info">
-                <h3>Usuario</h3>
-                  <div class="nombreUsuario">
-                </div>
-            </div>
-            </div>
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nuevo Usuario</button>
-          <div class="card-body">
+            <div id="login" class="col-lg-4 offset-lg-4 col-md-6 offset-md-3 col-12">
+                <img class="img-fluid mx-auto d-block rounded" src="img/logo2.png"/>
+            </div> 
+        </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Nuevo Usuario</button>
+        <div class="card-body">
             <div class="table-responsive">
               <table id="userList" class="table table-bordered table-hover table-striped">
                 <thead class="thead-light">
                 <tr>
-                  <th scope="col">Id</th>
                   <th scope="col">Identificaciòn</th>
                   <th scope="col">Nombre</th>
                   <th scope="col">Direcciòn</th>
@@ -91,8 +80,9 @@
                 </tbody>
               </table>
             </div>
-          </div>
-          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        </div>
+        <!--Modal de Agregar Usuario-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -104,14 +94,31 @@
                 <div class="modal-body">
                   <form>
                     <div class="form-row">
-                    <div class="form-group col-md-6 mb-3">
-                      <input type="number" name="userId" id="userId" class="form-control" placeholder="Id" required>
-                    </div>
-                    <div class="form-group col-md-6 mb-3">
+                    <div class="form-group col-md-12 mb-3">
                       <input type="text" name="userIdentification" id="userIdentification" class="form-control" placeholder="Identificaciòn" required >
                     </div>
                     <div class="form-group col-md-12 mb-3">
                       <input type="text" name="userName" id="userName" class="form-control" placeholder="Nombre del Usuario" required>
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                      <input type="date" name="userBirthtDay" id="userBirthtDay" class="form-control" placeholder="fecha de Cumpleaños" required>
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <select class="custom-select mr-sm-2" id="userMonthBirthtDay">
+                          <option selected>Mes de Cumpleaños...</option>
+                          <option value=1>ENERO</option>
+                          <option value=2>FEBRERO</option>
+                          <option value=3>MARZO</option>
+                          <option value=4>ABRIL</option>
+                          <option value=5>MAYO</option>
+                          <option value=6>JUNIO</option>
+                          <option value=7>JULIO</option>
+                          <option value=8>AGOSTO</option>
+                          <option value=9>SEPTIEMBRE</option>
+                          <option value=10>OCTUBRE</option>
+                          <option value=11>NOVIEMBRE</option>
+                          <option value=12>DICIEMBRE</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-6 mb-3">
                       <input type="text" name="userAddress" id="userAddress" class="form-control" placeholder="Direcciòn" required>
@@ -148,8 +155,9 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+        </div>
+        <!--Modal de Editar Usuario-->
+        <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
                 <div class="modal-header">
@@ -161,14 +169,31 @@
                 <div class="modal-body">
                   <form>
                     <div class="form-row">
-                    <div class="form-group col-md-6 mb-3">
-                      <input type="number" name="userIdE" id="userIdE" class="form-control" placeholder="Id" required>
-                    </div>
-                    <div class="form-group col-md-6 mb-3">
+                    <div class="form-group col-md-12 mb-3">
                       <input type="text" name="userIdentificationE" id="userIdentificationE" class="form-control" placeholder="Identificaciòn" required >
                     </div>
                     <div class="form-group col-md-12 mb-3">
                       <input type="text" name="userNameE" id="userNameE" class="form-control" placeholder="Nombre del Usuario" required>
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                      <input type="date" name="userBirthtDayE" id="userBirthtDayE" class="form-control" placeholder="fecha de Cumpleaños" required>
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                        <select class="custom-select mr-sm-2" id="userMonthBirthtDayE">
+                          <option selected>Mes de Cumpleaños...</option>
+                          <option value=1>ENERO</option>
+                          <option value=2>FEBRERO</option>
+                          <option value=3>MARZO</option>
+                          <option value=4>ABRIL</option>
+                          <option value=5>MAYO</option>
+                          <option value=6>JUNIO</option>
+                          <option value=7>JULIO</option>
+                          <option value=8>AGOSTO</option>
+                          <option value=9>SEPTIEMBRE</option>
+                          <option value=10>OCTUBRE</option>
+                          <option value=11>NOVIEMBRE</option>
+                          <option value=12>DICIEMBRE</option>
+                        </select>
                     </div>
                     <div class="form-group col-md-6 mb-3">
                       <input type="text" name="userAddressE" id="userAddressE" class="form-control" placeholder="Direcciòn" required>
@@ -202,10 +227,9 @@
                 </div>
               </div>
             </div>
-          </div>
         </div>
-      </main>
-
+    </main>     
+    <!-- fin Inicio de sesion--> 
     
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -218,3 +242,7 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </body>
 </html>
+
+
+
+

@@ -31,28 +31,42 @@
         </div>
     </nav>
     <!-- fin Barra Navegacion--> 
-    <!-- Inicio de sesion-->   
-    <div class="container bg-light w-50 mt-5">
-        <h1 class="text-center mt-5">Bienvenidos</h1>
-        <div id="alerta" class="alert alert-info alert-dismissible">
-          <strong>Información:</strong> <span id="mensaje"></span>
-          <button class="close">&times;</button>
+    <!-- Inicio de sesion-->
+    <main role="main" class="container my-auto" >
+    <div class="container bg-light w-50 mt-5" >
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-12">
+                    <div id="login-box" class="col-md-12">
+                       <div id="alerta" class="alert alert-info alert-dismissible">
+                            <strong>Información:</strong> <span id="mensaje"></span>
+                            <button class="close">&times;</button>
+                        </div>
+                        <form id="login-form" class="form" action="" method="post">
+                          <h3 class="text-center text-info">Iniciar Sesion</h3> 
+                          <div class="form-group">
+                            <label for="loginEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control mb-3" id="loginEmail">
+                            <p class="text-danger err">*Debe ingresar el campo Email, y este debe ser un email valido.</p>                      </div>
+                          <div class="form-group">
+                            <label for="loginPassword" class="form-label">Password</label>
+                            <input type="password" class="form-control mb-3" id="loginPassword">
+                            <p class="text-danger err">*Debe ingresar el campo Password</p></div>
+                          <div class="form-group text-center">
+                            <button id="autenticate" type="button" class="btn btn-primary btn-lg btn-block">Ingresar</button>
+                          </div>
+                          <div class="form-group text-center">
+                            <label for="remember-me" class="text-info">
+                              <span>No tienes una cuenta? <a href="usuarios.html" class="text-info">Crea tu cuenta aqui</a></span>
+                            </label>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <form>
-          <div class="mb-3">
-            <label for="loginEmail" class="form-label">Email</label>
-            <input type="email" class="form-control mb-3" id="loginEmail">
-            <p class="text-danger err">*Debe ingresar el campo Email, y este debe ser un email valido.</p>
-          </div>
-          <div class="mb-3">
-            <label for="loginPassword" class="form-label">Password</label>
-            <input type="password" class="form-control mb-3" id="loginPassword">
-            <p class="text-danger err">*Debe ingresar el campo Password</p>
-          </div>
-          <button id="autenticate" type="button" class="btn btn-primary text-center mt-5">Ingresar</button>
-        </form>
-        <br>
     </div>
+    </main>
     <!-- fin Inicio de sesion--> 
 
 

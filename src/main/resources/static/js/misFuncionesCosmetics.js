@@ -1,4 +1,27 @@
+/**
+ * Establece el aspecto inicial de la interfaz
+ */
+function estadoInicial(){
+    let user = sessionStorage.getItem("user");
 
+    if (user== null)
+        location.href="index.html";
+    else{
+        let userJS = JSON.parse(user);
+        let typeUser;
+
+        if (userJS.type=='ASE')
+            typeUser="ASESOR";
+        else if (userJS.type=='ADM')
+            typeUser="ADMINISTRADOR";
+        else if (userJS.type=='COORD')
+            typeUser="COORDINADOR";
+
+        $("#nameUser").html(userJS.name);
+        $("#emailUser").html(userJS.email);
+        $("#typeUser").html(typeUser);
+    } 
+}
 /**
  * Funcion que trae la informacion de los productos 
  */
@@ -268,5 +291,17 @@ function deleteProduct(referencePro){
         });
         }
     });
-
 }
+
+//cuando carga la página html se ejecuta la función: listar()
+$(document).ready(function () {
+    //configura el aspecto inicial de la pagina
+    estadoInicial();
+    //ejecuta función para enviar petición al ws
+
+    //si hizo clic en el enlace de cerrar sesion
+    $("#cerrarSession").click(function (){
+        sessionStorage.removeItem("user");
+        location.href="index.html"
+    });
+});
