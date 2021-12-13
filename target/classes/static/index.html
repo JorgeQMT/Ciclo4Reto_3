@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Reto Tres</title>
+  </head>
+  
+  <body style="background: url(img/fondo.jpg);">
+    <!-- Barra Navegacion-->
+    <nav class="nav navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img class="img-fluid mx-auto d-block rounded"src="img/logob.jpeg"/>
+        </a>        
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Inicio<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="menu.html">Menu</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- fin Barra Navegacion--> 
+    <!-- Inicio de sesion-->   
+    <div class="container bg-light w-50 mt-5">
+        <h1 class="text-center mt-5">Bienvenidos</h1>
+        <div id="alerta" class="alert alert-info alert-dismissible">
+          <strong>Información:</strong> <span id="mensaje"></span>
+          <button class="close">&times;</button>
+        </div>
+        <form>
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Email</label>
+            <input type="email" class="form-control mb-3" id="loginEmail">
+            <p class="text-danger err">*Debe ingresar el campo Email, y este debe ser un email valido.</p>
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Password</label>
+            <input type="password" class="form-control mb-3" id="loginPassword">
+            <p class="text-danger err">*Debe ingresar el campo Password</p>
+          </div>
+          <button id="autenticate" type="button" class="btn btn-primary text-center mt-5">Ingresar</button>
+        </form>
+        <br>
+    </div>
+    <!-- fin Inicio de sesion--> 
+
+
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript" src="js/misFuncionesLogin.js"></script>
+    <script type="text/javascript" src="js/util.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+  </body>
+</html>

@@ -1,0 +1,16 @@
+com\ciclo4\reto3\controller\OrderController.class
+com\ciclo4\reto3\repository\CosmeticCrudRepository.class
+com\ciclo4\reto3\Reto3Application.class
+com\ciclo4\reto3\repository\OrderCrudRepository.class
+com\ciclo4\reto3\repository\OrderRepository.class
+com\ciclo4\reto3\model\Order.class
+com\ciclo4\reto3\repository\CosmeticRepository.class
+com\ciclo4\reto3\repository\UserCrudRepository.class
+com\ciclo4\reto3\repository\UserRepository.class
+com\ciclo4\reto3\model\User.class
+com\ciclo4\reto3\controller\UserController.class
+com\ciclo4\reto3\service\OrderService.class
+com\ciclo4\reto3\service\CosmeticService.class
+com\ciclo4\reto3\model\Cosmetic.class
+com\ciclo4\reto3\controller\CosmeticController.class
+com\ciclo4\reto3\service\UserService.class

@@ -1,0 +1,16 @@
+canvas{
+    font-size: 10px;
+    text-align: center;
+    position: absolute;
+    
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -2;
+    background: #000000;
+  }
+
+  .navbar-brand img{
+      width: 55px;
+      height: 55px;
+  }
